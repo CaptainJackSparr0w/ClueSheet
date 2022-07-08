@@ -5,13 +5,14 @@
     border: solid 1px black;    
     white-space: nowrap;
     vertical-align: top;
+    font-size:40pt;
 }
 
 td{
     padding: 0;
     margin: 0;
     border: solid 1px black;
-    font-size:20pt;
+    font-size:45pt;
 }
 table { 
     border-spacing: 0;
