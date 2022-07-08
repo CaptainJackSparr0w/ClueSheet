@@ -6,6 +6,8 @@ var blank = "⬜";//⬛🔲🔳⬜🟦🟪🟨
 var cross = "❌";
 var question = "❔" + "&nbsp";
 var cells = document.getElementsByClassName('cell');
+var cellObjects = new Array();
+
 for(var i = 0; i < cells.length; i++)
 {
     // cells[i].setAttribute("onclick", "mark(this)");
@@ -19,7 +21,12 @@ for(var i = 0; i < cells.length; i++)
     // cells[i].appendChild(imgElem);
     cells[i].innerHTML = blank;
 }
-
+function cell(row,column,element)
+{
+    this.Row = row;
+    this.Column = column;
+    this.Element = element;
+}
 function mark(element)
 {
     // if(element.children[0].src.indexOf('uncheck') > -1)
@@ -48,7 +55,7 @@ function mark(element)
 }
 function strikeParentElement(element, strike)
 {
-    let parent = element.parentElement.parentElement.parentElement.parentElement.parentElement.children[0];
+    let parent = element.parentElement.parentElement.parentElement.parentElement.parentElement;//.children[0];
     
     let i = false;
     if(strike == "i")
