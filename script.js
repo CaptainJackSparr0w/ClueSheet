@@ -20,6 +20,10 @@ for(var i = 0; i < cells.length; i++)
     // imgElem.src = "images/unchecked.png";
     // cells[i].appendChild(imgElem);
     cells[i].innerHTML = blank;
+    if(i%6 == 0)
+    {
+        cells[i].style.backgroundColor = "white";
+    }
 }
 function cell(row,column,element)
 {
@@ -70,7 +74,7 @@ function strikeParentElement(element, strike)
     if(strike)
     {
         parent.style.textDecoration = "line-through";
-        parent.style.color = "palevioletred"
+        parent.style.color = "red";// "palevioletred";
     }
     else if(i)
     {
