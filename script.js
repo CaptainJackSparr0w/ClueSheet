@@ -33,7 +33,7 @@ function mark(element)
         element.innerHTML = question;
         strikeParentElement(element, "i");
     }
-    else if(element.innerHTML.indexOf("❔") > -1)
+    else if(element.innerHTML == question)
     {
         element.innerHTML = blank;
         strikeParentElement(element, false);
