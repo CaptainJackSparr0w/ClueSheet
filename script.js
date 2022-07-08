@@ -2,9 +2,9 @@ $(".cell").each(function () {
     $(this)
     .attr("onclick", "mark(this);");
 });
-var blank = "⬜";//⬛🔲🔳⬜
+var blank = "⬜";//⬛🔲🔳⬜🟦🟪🟨
 var cross = "❌";
-var question = "❔" + "&nbsp" + "&nbsp";
+var question = "❔" + "&nbsp";
 var cells = document.getElementsByClassName('cell');
 for(var i = 0; i < cells.length; i++)
 {
@@ -33,13 +33,64 @@ function mark(element)
     if(element.innerHTML == blank)
     {
         element.innerHTML = cross;
+        strikeParentElement(element, true);
     }
     else if(element.innerHTML == cross)
     {
         element.innerHTML = question;
+        strikeParentElement(element, "i");
     }
     else if(element.innerHTML.indexOf("❔") > -1)
     {
         element.innerHTML = blank;
+        strikeParentElement(element, false);
     }
+}
+function strikeParentElement(element, strike)
+{
+    let parent = element.parentElement.parentElement.parentElement.parentElement.parentElement.children[0];
+    
+    let i = false;
+    if(strike == "i")
+    {
+        strike = false;
+        i = true;
+    }
+
+    // parent.innerHTML = strikeThroughText(parent.innerHTML,strike);
+
+    
+    if(strike)
+    {
+        parent.style.textDecoration = "line-through";
+        parent.style.color = "palevioletred"
+    }
+    else if(i)
+    {
+        parent.style.fontStyle = "italic";
+        parent.style.color = "darkorange"
+        parent.style.textDecoration = "";
+    }
+    else
+    {
+        parent.style.fontStyle = "";
+        parent.style.color = "";
+        parent.style.textDecoration = "";
+    }
+}
+function strikeThroughText(text, strike)
+{
+    text = text.trim();
+    if(strike)
+    {
+        return text
+        .split('')
+        .map(char => '\u0336' + char )
+        .join('');
+    }
+    else
+    {
+        return text.replace(/[\u0336]/g, '');
+    }
+        
 }

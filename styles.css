@@ -2,29 +2,39 @@
 .cell
 {
     width: 1%;
-    border: solid 1px black;    
+    /* border: solid 1px black; */
     white-space: nowrap;
     vertical-align: top;
     font-size:40pt;
+    text-align: center;
 }
-
+.ColHeader
+{
+    text-align: center;
+}
 td{
     padding: 0;
     margin: 0;
-    border: solid 1px black;
-    font-size:45pt;
+    /* border: solid 1px black; */
+    font-size:40pt;
 }
 table { 
     border-spacing: 0;
     border-collapse: collapse;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     height: 100%;
     width: 100%;
 }
-.body {
-    width: 100vw;
+body {
+    /* width: 100vw;
     height: 100vh;
-    /*IF YOU REALLY WANT TO FORCE THE ISSUE*/
-    overflow: hidden;
-
+    
+    overflow: hidden; */
+    /* background: linear-gradient(47deg, #3bd9ff, #ff62eb);  */
+    /* background: linear-gradient(45deg, #fff27d, #ff62eb); */
+    /* background: linear-gradient(120deg, #0078d7, #ff62eb); */
+    /* background: linear-gradient(120deg, transparent, #ffff65); */
+    background: linear-gradient(120deg, transparent, #9e9e9e);
+    /* color: purple; */
+    font-family: monospace;
 }
