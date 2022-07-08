@@ -4,7 +4,7 @@ $(".cell").each(function () {
 });
 var blank = "⬜";//⬛🔲🔳⬜🟦🟪🟨
 var cross = "❌";
-var question = "❔";// + "&nbsp";
+var question = "❗";// + "&nbsp";
 var cells = document.getElementsByClassName('cell');
 var cellObjects = new Array();
 for(var i = 0; i < cells.length; i++)
