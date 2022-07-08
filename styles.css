@@ -1,6 +1,13 @@
+.dot {
+    height: 49px;
+    width: 49px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
 .cell
 {
-    width: 1%;
+    /* width: 1%; */
     /* border: solid 1px black; */
     white-space: nowrap;
     vertical-align: top;

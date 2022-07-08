@@ -7,18 +7,8 @@ var cross = "❌";
 var question = "❔" + "&nbsp";
 var cells = document.getElementsByClassName('cell');
 var cellObjects = new Array();
-
 for(var i = 0; i < cells.length; i++)
 {
-    // cells[i].setAttribute("onclick", "mark(this)");
-    // var imgElem = document.createElement('img');
-    // imgElem.style.position = 'absolute';
-    // // imgElem.style.top = 0;
-    // // imgElem.style.left = 0;
-    // imgElem.setAttribute("name", "markImage");
-    // imgElem.setAttribute('draggable', false);
-    // imgElem.src = "images/unchecked.png";
-    // cells[i].appendChild(imgElem);
     cells[i].innerHTML = blank;
     if(i%6 == 0)
     {
@@ -33,14 +23,6 @@ function cell(row,column,element)
 }
 function mark(element)
 {
-    // if(element.children[0].src.indexOf('uncheck') > -1)
-    // {
-    //     element.children[0].src = element.children[0].src.replace('unchecked.png', 'checked.png');
-    // }
-    // else
-    // {
-    //     element.children[0].src = element.children[0].src.replace('checked.png', 'unchecked.png');
-    // }
     if(element.innerHTML == blank)
     {
         element.innerHTML = cross;
@@ -74,12 +56,16 @@ function strikeParentElement(element, strike)
     if(strike)
     {
         parent.style.textDecoration = "line-through";
-        parent.style.color = "red";// "palevioletred";
+        parent.style.color = "red";
+        parent.children[0].style.backgroundColor= "#ff000061";
     }
     else if(i)
     {
         parent.style.fontStyle = "italic";
-        parent.style.color = "darkorange"
+        parent.style.color = "#ff5722";// "darkorange";
+        // parent.style.textShadow = '3px 3px 3px darkorange';
+        // parent.style.outline = " 3px solid darkorange";
+        parent.children[0].style.backgroundColor= " #ff8c007d";
         parent.style.textDecoration = "";
     }
     else
@@ -87,6 +73,9 @@ function strikeParentElement(element, strike)
         parent.style.fontStyle = "";
         parent.style.color = "";
         parent.style.textDecoration = "";
+        parent.children[0].style.backgroundColor= "";
+        // parent.style.outline = "";
+        // parent.style.textShadow = '';
     }
 }
 function strikeThroughText(text, strike)
